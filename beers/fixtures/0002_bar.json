@@ -1,0 +1,37 @@
+[
+  {
+    "model": "beers.bar",
+    "pk": 1,
+    "fields": {
+      "name": "1er étage"
+    }
+  },
+  {
+    "model": "beers.bar",
+    "pk": 2,
+    "fields": {
+      "name": "2ème étage"
+    }
+  },
+  {
+    "model": "beers.bar",
+    "pk": 3,
+    "fields": {
+      "name": "3ème étage"
+    }
+  },
+  {
+    "model": "beers.bar",
+    "pk": 4,
+    "fields": {
+      "name": "rooftop"
+    }
+  },
+  {
+    "model": "beers.bar",
+    "pk": 5,
+    "fields": {
+      "name": "skyscrapper"
+    }
+  }
+]

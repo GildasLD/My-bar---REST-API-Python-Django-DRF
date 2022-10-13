@@ -1,14 +1,11 @@
 from rest_framework.routers import DefaultRouter
- 
-from beers.views import BarsViewSet, ReferenceViewSet, StockViewSet
+
+from beers.views import BarViewSet, OrderViewSet, ReferenceViewSet, StockViewSet
 
 # Create a router and register our viewsets with it.
 router = DefaultRouter()
- 
-
-router.register(r'references', ReferenceViewSet, basename='references')
-router.register(r'bars', BarsViewSet, basename='bars')
-router.register(r'stocks', StockViewSet, basename='stocks')
- 
+router.register(r"references", ReferenceViewSet, basename="reference")
+router.register(r"bars", BarViewSet, basename="bar")
+router.register(r"stocks", StockViewSet, basename="stock")
+router.register(r"orders", OrderViewSet, basename="orders")
 urlpatterns = router.urls
- 

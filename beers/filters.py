@@ -1,25 +1,33 @@
 from django_filters import rest_framework as filters
-
-from .models import References, ViewStock
+from .models import Order, Reference, Stock
 
 
 class ReferenceFilter(filters.FilterSet):
     id = filters.NumberFilter()
-    ref = filters.CharFilter(lookup_expr='icontains')
-    name = filters.CharFilter(lookup_expr='icontains')
-    description = filters.CharFilter(lookup_expr='icontains')
+    ref = filters.CharFilter(lookup_expr="icontains")
+    name = filters.CharFilter(lookup_expr="icontains")
+    description = filters.CharFilter(lookup_expr="icontains")
 
     class Meta:
-        model = References
-        fields = ['id', 'ref', 'name', 'description']
+        model = Reference
+        fields = ["id", "ref", "name", "description"]
 
 
-class ViewStockFilter(filters.FilterSet):
+class StockFilter(filters.FilterSet):
     id = filters.NumberFilter()
-    reference = filters.CharFilter(lookup_expr='icontains')
-    bars = filters.CharFilter(lookup_expr='icontains')
+    reference = filters.NumberFilter()
+    bar = filters.NumberFilter()
     stock = filters.NumberFilter()
 
     class Meta:
-        model = ViewStock
-        fields = ('id', 'reference', 'bars', 'stock')
+        model = Stock
+        fields = ("id", "reference", "bar", "stock")
+
+
+class OrderFilter(filters.FilterSet):
+    id = filters.NumberFilter()
+    order_date = filters.DateFilter()
+
+    class Meta:
+        model = Order
+        fields = ("id", "order_date")
